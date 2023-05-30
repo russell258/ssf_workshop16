@@ -27,14 +27,15 @@ public class Rulebook implements Serializable{
     public JsonObjectBuilder toJSON(){
         return Json.createObjectBuilder()
                 .add("type",this.getTotal_count())
-                .add("count",this.getTotal_count());
+                .add("count",this.getFile());
     }
     
     public static Rulebook createJson(JsonObject o){
         Rulebook r  = new Rulebook();
         JsonNumber totalCount = o.getJsonNumber("total_count");
+        String file = o.getString("file");
         r.setTotal_count(totalCount.intValue());
-        r.setType(o.getString("total_count"));
+        r.setFile(file);
         return r;
     }
     

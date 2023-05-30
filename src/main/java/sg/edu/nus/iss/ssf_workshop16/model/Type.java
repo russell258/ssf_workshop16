@@ -27,6 +27,7 @@ public class Type implements Serializable{
         this.count = count;
     }
 
+    //a method to add the Type and Count to json object Builder
     public JsonObjectBuilder toJSON(){
         return Json.createObjectBuilder()
                 .add("type",this.getType())
