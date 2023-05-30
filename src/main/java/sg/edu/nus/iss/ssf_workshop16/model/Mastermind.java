@@ -94,7 +94,7 @@ public class Mastermind implements Serializable{
                     .build();
     }
 
-    public JsonObject toJSONUpdaate(){
+    public JsonObject toJSONUpdate(){
         return Json.createObjectBuilder()
                     .add("id",this.getId())
                     .add("update_count",this.getUpdateCount())
