@@ -26,8 +26,8 @@ public class Rulebook implements Serializable{
 
     public JsonObjectBuilder toJSON(){
         return Json.createObjectBuilder()
-                .add("type",this.getTotal_count())
-                .add("count",this.getFile());
+                .add("total_count",this.getTotal_count())
+                .add("file",this.getFile());
     }
     
     public static Rulebook createJson(JsonObject o){
