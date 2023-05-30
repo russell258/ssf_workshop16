@@ -47,7 +47,11 @@ public class Pieces implements Serializable{
         JsonObject decodingBoard = o
                                 .getJsonObject("decoding_board");
         JsonObject pegs = o.getJsonObject("pegs");
-        
+        JsonObject rb = o.getJsonObject("rulebook");
+        p.decoding_board = DecodingBoard.createJson(decodingBoard);
+        p.pegs = Pegs.createJson(pegs);
+        p.rulebook = Rulebook.createJson(rb);
+        return p;
     }
     
 }
