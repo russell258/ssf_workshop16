@@ -23,7 +23,7 @@ public class BoardGameService {
     }
 
     public int updateBoardGame(final Mastermind ms){
-        return bgRepo.saveGame(ms);
+        return bgRepo.updateBoardGame(ms);
     }
 
 }

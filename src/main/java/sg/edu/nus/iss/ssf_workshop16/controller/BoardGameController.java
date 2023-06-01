@@ -61,13 +61,21 @@ public class BoardGameController {
                             .body(ms.toJSON().toString());
     }
 
+    //put api to overwrite and update api. requestbody for the updated json object (give in java object), string for the 
+    // id to update, request param to indicate update or not
     @PutMapping(path="{msId}")
     public ResponseEntity<String> updateBoardGame(@RequestBody Mastermind ms, 
                                                 @PathVariable String msId, 
                                                 @RequestParam(defaultValue = "false") boolean isUpSert) throws IOException
         {
+            System.out.println(isUpSert);
+            System.out.println(isUpSert);
+            System.out.println(isUpSert);
+            System.out.println(isUpSert);
             Mastermind result = null;
             ms.setUpSert(isUpSert);
+            System.out.println(ms.isUpSert());
+            System.out.println(ms.isUpSert());
             if(!isUpSert){
                 result = bgSvc.findById(msId);
                 if(result==null){
@@ -79,6 +87,7 @@ public class BoardGameController {
             }
             ms.setId(msId);
             int updateCount = bgSvc.updateBoardGame(ms);
+            System.out.println(updateCount);
             ms.setUpdateCount(updateCount);
             return ResponseEntity
                 .status(HttpStatus.OK)
